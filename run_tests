@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+define('TEST_FILE', 'test.php');
+
+$tests = scandir(__DIR__);
+$green = `tput setaf 2`;
+$reset = `tput sgr0`;
+
+foreach ($tests as $test) {
+    if (substr($test, 0, 1) == '.')
+        continue;
+
+    if (is_dir($test) 
+        && is_file($test . constant('DIRECTORY_SEPARATOR') . constant('TEST_FILE'))) {
+        fwrite(
+            STDOUT,
+            $green 
+            . ucfirst(join(explode('_', $test), ' ')) 
+            . $reset 
+            . PHP_EOL 
+            . '----------------------' 
+            . PHP_EOL
+        );
+        include_once $test . constant('DIRECTORY_SEPARATOR') . constant('TEST_FILE');
+    }
+}
