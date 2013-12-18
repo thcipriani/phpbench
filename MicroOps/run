@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+ini_set('memory_limit', '500M');
+
 define('TEST_FILE', 'test.php');
 
 $tests = scandir(__DIR__);

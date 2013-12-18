@@ -2,7 +2,7 @@
 
 function setup(&$i, &$arr)
 {
-    while ($i < 1000000) {
+    while ($i < 100000) {
         $arr[] = $i;
         $i++;
     }

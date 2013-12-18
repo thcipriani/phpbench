@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+function printResult($desc, $bool) {
+  $red = `tput setaf 1`;
+  $green = `tput setaf 2`;
+  $reset = `tput sgr0`;
+
+  $color = $bool ? $green : $red;
+  $result = $bool ? "TRUE" : "FALSE";
+  fwrite(STDOUT, "The statement: ${color}${desc} is ${result}${reset}" . PHP_EOL);
+}
+
+$results = [
+  "_php_-is-true"   => "php" == true,
+  "_php_-is-zero"   => "php" == 0,
+  "zero-is-false" => 0 == false,
+  "_php_-is-false"  => "php" == false,
+];
+
+foreach($results as $k => $v) {
+  $statement = str_replace("_", "'", str_replace("-", " ", $k));
+  printResult(strtoupper($statement), $v);
+}

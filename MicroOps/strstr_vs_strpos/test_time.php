@@ -37,7 +37,7 @@ function main()
     setup($str);
 
     $t1_start = microtime(1);
-    for ($i = 0; $i < 1000000; $i++) { 
+    for ($i = 0; $i < 100000; $i++) { 
         testOne($str);
     }
     $t1_end = microtime(1);
@@ -51,7 +51,7 @@ function main()
     setup($str);
 
     $t2_start = microtime(1);
-    for ($i = 0; $i < 1000000; $i++) { 
+    for ($i = 0; $i < 100000; $i++) { 
         testTwo($str);
     }
     $t2_end = microtime(1);

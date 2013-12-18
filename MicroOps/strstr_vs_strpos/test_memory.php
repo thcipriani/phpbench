@@ -37,7 +37,7 @@ function main()
     setup($str);
 
     $t1_start = memory_get_peak_usage();
-    for ($i = 0; $i < 1000000; $i++) { 
+    for ($i = 0; $i < 100000; $i++) { 
         testOne($str);
     }
     $t1_end = memory_get_peak_usage();
@@ -51,7 +51,7 @@ function main()
     setup($str);
 
     $t2_start = memory_get_peak_usage();
-    for ($i = 0; $i < 1000000; $i++) { 
+    for ($i = 0; $i < 100000; $i++) { 
         testTwo($str);
     }
     $t2_end = memory_get_peak_usage();

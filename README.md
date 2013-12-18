@@ -1,4 +1,4 @@
-phpbench
+Random PHP Playground
 ========
 
-Pointless Bench Tests of Dumb PHPness
+Pointless Playing With Dumb PHPness
